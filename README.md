@@ -1,3 +1,49 @@
+# 📄 Doctor Listing Page (Bajaj Campus Assessment)
+
+## 🎯 Objective
+
+Build a **Doctor Listing Webpage** where users can:
+
+- Search for doctors by name.
+- Apply filters like consultation type and specialties.
+- Sort doctors by fees or experience.
+- All data should come from a **single API call**.
+- All filtering and sorting should happen on the **client side only**.
+- 3 hours are given for completing this task
+Once complete, deploy the project and fill out the final submission form.
+
+---
+
+## 🧩 Features to Implement
+
+### 🔍 1. Autocomplete Search Bar
+
+- Located at the top of the page.
+- Shows up to **3 suggestions** based on the typed doctor name.
+- Clicking a suggestion or pressing Enter filters the list.
+- No suggestions are shown if no matches are found.
+
+### 🎛 2. Filter Panel
+
+- **Consultation Type (Single Select):**
+  - Options: `Video Consult`, `In Clinic`
+- **Specialties (Multi Select):**
+  - Multiple specialty checkboxes (e.g., Dentist, Cardiologist).
+  - Users can apply more than one specialty at a time.
+- **Sorting Options:**
+  - By `fees` (ascending)
+  - By `experience` (descending)
+
+**Note:** Filters should work in combination. The **first applied filter takes priority**.
+
+---
+
+## 🔗 API & Data Handling
+
+- Fetch doctor data from the following API:
+  
+https://srijandubey.github.io/campus-api-mock/SRM-C1-25.json
+
 
 - **Only one API call** is allowed.
 - All filtering, searching, and sorting must happen on the **frontend**.
@@ -34,10 +80,9 @@ Add the following `data-testid` attributes to make your app testable:
 
 ## 🚀 Deployment Instructions
 
-- Deploy your project using **Netlify**.
 - Make sure all filters/search work correctly even on the deployed site.
 - Once deployed, submit your final form link.
-
+- Form link will be given by the company
 ---
 
 ## 🎨 Sample UI (Reference)
