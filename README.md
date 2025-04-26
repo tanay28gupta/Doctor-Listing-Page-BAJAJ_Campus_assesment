@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# Campus Assessment: Doctor Listing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Task Overview
 
-## Available Scripts
+Develop and deploy a doctor listing page that includes:
 
-In the project directory, you can run:
+- An **autocomplete search bar** for doctor names.
+- A **filter panel** with:
+  - Consultation type (single select).
+  - Specialties (multi-select).
+  - Sort options (fees and experience).
+- A **doctor list** rendered using data from a provided API.
+- Sample UI image is attached at the bottom.
+- Functionality has more weightage than UI.
+- Once done, Fill the Final submission form.
+- Final Submission Form Link: https://forms.office.com/r/jzUf2S2tSC
 
-### `npm start`
+All filters and search must work **entirely on the client side** after the initial API call.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  Features to Implement
 
-### `npm test`
+### 1. Autocomplete Header
+- A search bar at the top with **dropdown suggestions**.
+- Suggestions show top 3 matches based on the `name` key.
+- On clicking a suggestion or pressing Enter, the list filters accordingly.
+- If no matches are found, no suggestions are shown.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Dynamic Filter Panel
+- **Single Filter (Radio):**
+  - Options: `Video Consult`, `In Clinic`
+  - Only one can be selected at a time.
 
-### `npm run build`
+- **Multi Filter (Checkbox):**
+  - Options: Doctor specialities (from dataset).
+  - Doctors may have multiple specialities.
+  - Multiple filters can be applied simultaneously.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Sort Filter:**
+  - Sort by:
+    - `fees` (ascending)
+    - `experience` (descending)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Filters should work in combination, with the **first applied filter taking precedence**.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## API Instructions 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- API URL: https://srijandubey.github.io/campus-api-mock/SRM-C1-25.json
+- **Call the API** to fetch all doctor data.
+- All filtering, searching, and sorting must happen on the frontend.
+- Show applied filters as **query params in the URL**.
+- Navigating back should **retain filters** using URL query params.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Test Case Support: `data-testid` Requirements
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Use the following `data-testid` attributes **exactly as listed** for test automation. These must be applied directly to the corresponding interactive or display elements.
 
-## Learn More
+| `data-testid`                        | Description                                                   |
+|-------------------------------------|---------------------------------------------------------------|
+| `autocomplete-input`                | Input box for entering doctor names                          |
+| `suggestion-item`                   | Each item in the autocomplete dropdown (max 3 suggestions)   |
+| `doctor-card`                       | Wrapper for each doctor in the rendered list                 |
+| `doctor-name`                       | Doctor’s name inside the card                                |
+| `doctor-specialty`                  | Displayed specialty/specialties of the doctor                |
+| `doctor-experience`                | Experience info shown for the doctor                         |
+| `doctor-fee`                        | Fee info shown for the doctor                                |
+| `filter-header-speciality`             | Header for "Speciality" filter                      |
+| `filter-header-moc`             | Header for "Consultation Mode" filter                      |
+| `filter-header-sort`             | Header for "Sort" filter                      |
+| `filter-video-consult`             | Radio button for "Video Consult" filter                      |
+| `filter-in-clinic`                 | Radio button for "In Clinic" filter                          |
+| `filter-specialty-General-Physician`| Checkbox for "General Physician" specialty filter            |
+| `filter-specialty-Dentist`          | Checkbox for "Dentist" specialty filter                      |
+| `filter-specialty-Dermatologist`    | Checkbox for "Dermatologist" specialty filter                |
+| `filter-specialty-Paediatrician`    | Checkbox for "Paediatrician" specialty filter                |
+| `filter-specialty-Gynaecologist`    | Checkbox for "Gynaecologist" specialty filter                |
+| `filter-specialty-ENT`              | Checkbox for "ENT" specialty filter                          |
+| `filter-specialty-Diabetologist`    | Checkbox for "Diabetologist" specialty filter                |
+| `filter-specialty-Cardiologist`     | Checkbox for "Cardiologist" specialty filter                 |
+| `filter-specialty-Physiotherapist`  | Checkbox for "Physiotherapist" specialty filter              |
+| `filter-specialty-Endocrinologist`  | Checkbox for "Endocrinologist" specialty filter              |
+| `filter-specialty-Orthopaedic`      | Checkbox for "Orthopaedic" specialty filter                  |
+| `filter-specialty-Ophthalmologist`  | Checkbox for "Ophthalmologist" specialty filter              |
+| `filter-specialty-Gastroenterologist`| Checkbox for "Gastroenterologist" specialty filter          |
+| `filter-specialty-Pulmonologist`    | Checkbox for "Pulmonologist" specialty filter                |
+| `filter-specialty-Psychiatrist`     | Checkbox for "Psychiatrist" specialty filter                 |
+| `filter-specialty-Urologist`        | Checkbox for "Urologist" specialty filter                    |
+| `filter-specialty-Dietitian-Nutritionist` | Checkbox for "Dietitian/Nutritionist" specialty filter |
+| `filter-specialty-Psychologist`     | Checkbox for "Psychologist" specialty filter                 |
+| `filter-specialty-Sexologist`       | Checkbox for "Sexologist" specialty filter                   |
+| `filter-specialty-Nephrologist`     | Checkbox for "Nephrologist" specialty filter                 |
+| `filter-specialty-Neurologist`      | Checkbox for "Neurologist" specialty filter                  |
+| `filter-specialty-Oncologist`       | Checkbox for "Oncologist" specialty filter                   |
+| `filter-specialty-Ayurveda`         | Checkbox for "Ayurveda" specialty filter                     |
+| `filter-specialty-Homeopath`        | Checkbox for "Homeopath" specialty filter                    |
+| `sort-fees`                         | Sort doctors by fees (ascending)                             |
+| `sort-experience`                  | Sort doctors by experience (descending)                      |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Notes
 
-### Code Splitting
+- Do **not reuse** the same `data-testid` for different elements unless allowed.
+- All filters work in **combination**, and must reflect in the query parameters.
+- "Clear All", chevron toggles, or search inside specialties filter are **not required**.
+- Handle browser navigation (`Back`/`Forward`) to retain filters using the query params.
+- Don't forget to fill the final submission form.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+Happy coding and good luck! 🚀
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Page Design](https://cmsuatstor.blob.core.windows.net/cms-uat/assets/image_8e9f8f882a.png "Sample Page Design")
+![Autocomplete Design](https://cmsuatstor.blob.core.windows.net/cms-uat/assets/image_1_c40c34dccc.png "Sample Autocomplete Design")
