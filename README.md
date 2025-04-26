@@ -13,7 +13,7 @@ Develop and deploy a doctor listing page that includes:
 - Sample UI image is attached at the bottom.
 - Functionality has more weightage than UI.
 - Once done, Fill the Final submission form.
-- Final Submission Form Link: https://forms.office.com/r/jzUf2S2tSC
+
 
 All filters and search must work **entirely on the client side** after the initial API call.
 
