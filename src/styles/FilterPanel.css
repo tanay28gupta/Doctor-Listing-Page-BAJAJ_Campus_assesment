@@ -1,0 +1,158 @@
+/* Scrollable filter for specialities */
+.filter-panel {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 300px;
+  height: fit-content;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.filter-section {
+  margin-bottom: 1.5rem;
+}
+
+.filter-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+/* Specialties Container */
+.specialties-container {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-right: -0.5rem;
+}
+
+.specialty-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 0.25rem;
+}
+
+.specialty-item:hover {
+  background-color: #f1f5f9;
+}
+
+.specialty-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.specialty-label {
+  font-size: 0.95rem;
+  color: #475569;
+  flex: 1;
+}
+
+/* Radio Groups */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radio-label:hover {
+  background-color: #f1f5f9;
+}
+
+.radio-label input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.radio-label-text {
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* Custom Scrollbar */
+.specialties-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.specialties-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.specialties-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.specialties-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filter-panel {
+    width: 100%;
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.filter-panel button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.filter-panel button:hover {
+  background-color: #0056b3;
+}
+
+.remove-filters-btn {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1.5rem;
+}
+
+.remove-filters-btn:hover:not(:disabled) {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+.remove-filters-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

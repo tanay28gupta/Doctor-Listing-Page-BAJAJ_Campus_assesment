@@ -1,0 +1,253 @@
+.doctor-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  align-items: start;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.doctor-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.doctor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-header {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+  min-height: 0;
+  width: 100%;
+}
+
+.doctor-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.doctor-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.doctor-info h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+  word-break: break-word;
+  width: 100%;
+}
+
+.specialties {
+  font-size: 0.95rem;
+  color: #3b82f6;
+  margin: 0.25rem 0;
+  font-weight: 500;
+  word-break: break-word;
+  width: 100%;
+}
+
+.doctor-meta {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.doctor-meta p {
+  font-size: 0.9rem;
+  color: #475569;
+  margin: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.doctor-meta strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.read-more-btn,
+.book-now-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.read-more-btn {
+  color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.read-more-btn:hover {
+  color: #2563eb;
+  background-color: #dbeafe;
+}
+
+.book-now-btn {
+  color: #ffffff;
+  background-color: #3b82f6;
+}
+
+.book-now-btn:hover {
+  background-color: #2563eb;
+}
+
+.arrow-icon,
+.calendar-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover .arrow-icon {
+  transform: translateY(1px);
+}
+
+.book-now-btn:hover .calendar-icon {
+  transform: scale(1.1);
+}
+
+.doctor-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  border-top: 1px solid transparent;
+  margin-top: 1rem;
+  min-height: 0;
+}
+
+.doctor-details.expanded {
+  max-height: 1000px;
+  border-top-color: #e2e8f0;
+}
+
+.details-content {
+  padding-top: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.doctor-details.expanded .details-content {
+  opacity: 1;
+}
+
+.introduction {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  word-break: break-word;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 0.85rem;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .doctor-list {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .doctor-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .doctor-meta {
+    justify-content: center;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .read-more-btn,
+  .book-now-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

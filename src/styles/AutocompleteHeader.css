@@ -1,0 +1,15 @@
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+  }
+  
+  ul {
+    margin-top: 5px;
+  }
+  
+  li {
+    padding: 8px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,137 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #ffffff;
+}
+
+.App {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+}
+
+/* Filter Panel */
+.filter-panel {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: 85vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #444 #1e1e1e;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-section h4 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.checkbox-group, .radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-group label, .radio-group label {
+  color: #ccc;
+  cursor: pointer;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  accent-color: #00bcd4;
+}
+
+/* Doctor Cards */
+.doctor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.doctor-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: scale(1.02);
+}
+
+.doctor-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.doctor-card h3 {
+  margin: 0 0 10px 0;
+  color: #00bcd4;
+}
+
+.doctor-card p {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.read-more {
+  margin-top: 10px;
+  color: #00bcd4;
+  cursor: pointer;
+}
+
+/* Book Appointment Button */
+.book-appointment {
+  margin-top: 10px;
+}
+
+.book-appointment button {
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.book-appointment button:hover {
+  background-color: #008fa1;
+}
